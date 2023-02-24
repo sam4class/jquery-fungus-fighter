@@ -38,7 +38,7 @@ function onReady() {
     $('.attack-btn.dragon-blade').on('click', dbAttack);
     $('.attack-btn.star-fire').on('click', starAttack);
 
-    
+    render();
     
     // 🧠 Remember
     // - Handle events that ->
@@ -93,12 +93,13 @@ function render(){
     console.log("Inside render");
     $('.ap-text').html(`<div class="ap-text">${attackPoints}</div>`)
     $('.hp-text').html(`<div class="ap-text">${hitPoints}</div>`)
-
-    if(hitPoints < 0);{
+//this needs to equal 0, duh, or wait, what i had would work too?  hitPoints < 0, attackPoints < 0?
+//i get the same thing using both ways, something else is broken
+    if(hitPoints === 0);{
         console.log('The Monster is defeated!!!');
         $('.freaky-fungus walk').html(` <div class="freaky-fungus dead"></div>`)
     }
-    if ( attackPoints < 0){
+    if ( attackPoints === 0){
         console.log('The Monster Won!');
         $('.freaky-fungus walk').html(` <div class="freaky-fungus jump"></div>`)
     }
